@@ -25,7 +25,7 @@ class Restaurant():
         print("type of cuisine: " + self.cuisine_type)
 
     def open_restaurant():
-        print("the restaurant is now " + self.open_restaurant)
+        print("the restaurant is " + self.open_restaurant)
 
 restaurant = Restaurant("Marcelo's", "mexican cuisine")
 print(restaurant.restaurant_name)
