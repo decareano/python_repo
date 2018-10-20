@@ -3,7 +3,7 @@ class Car():
         self.make = make
         self.model = model
         self.year = year
-        self.odometer_reading = 120
+        self.odometer_reading = 200
     
     def get_descriptive_name(self):
         long_name = str(self.year) + ' ' + self.make  + ' ' + self.model
@@ -19,11 +19,15 @@ class Car():
             print(self.odometer_reading)
         else:
             print("nope, cannot roll back odometer")
+    
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
 
 my_new_car = Car('audi', 'a4', 2016)
 print(my_new_car.get_descriptive_name())
-my_new_car.update_odometer(140)
 
+my_new_car.update_odometer(23500)
 my_new_car.read_odometer()
 
-
+my_new_car.increment_odometer(100)
+my_new_car.read_odometer()
