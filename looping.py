@@ -1,7 +1,7 @@
 songs = {                       
         'material girl': 'madonna',
 	'oh my': 'madonna',
-	'billie jean': 'michael jackson',
+        'billie jean': 'michael jackson',
 	'thriller': 'michael jackson',
 	'hey jude': 'beatles',
 	'imagine': 'beatles',
@@ -9,14 +9,35 @@ songs = {
 	'red house': 'jimi hendrix',
 }
 
-for t in enumerate(songs):
-    print(t)
+singers = []
+for i in sorted(songs.values()):
+    singers.append(i)
 
-print(" ")
+print(singers)
+
+for h in sorted(songs.keys()):
+  print(h)
 
 
-for t, (k, v) in enumerate(songs.items()):
-    print(" key: {}, value: {}".format(k, v))
+singerset = set(singers)
+print(singerset)
+singerset1 = list(singerset)
+print(singerset1)
+
+for h in singerset1:
+    print("{}: ".format(h))
+    for eachsong, a_band in songs.items():
+           if a_band == h:
+               print("      {} ".format(eachsong))           
+    
+
+
+
+
+
+
+# for t, (k, v) in enumerate(songs.items()):
+#    print(" {}, {}".format(k, v))
 
 """
 Explanations:
