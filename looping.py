@@ -30,7 +30,7 @@ for h in singerset1:
            if a_band == h:
                print("      {} ".format(eachsong))           
     
-
+# i have a dict first. then create a set of the singers (no dups). then back to a list. then print loop song/singers 
 
 
 
