@@ -59,3 +59,6 @@ print('\n')
 
 for t in reversed(a):
     print(t)
+
+
+
