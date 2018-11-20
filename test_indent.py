@@ -39,3 +39,15 @@ for n in favorite_languages:
         print(" Hi " + n.title() + ", I see your fave lang is " +
               favorite_languages[n].title() + "!")
 
+
+for name in sorted(favorite_languages.keys()):
+    print(name.title() + ", thank you for taking the poll")
+
+    
+print("the following lang have been mentioned:")
+for lang in favorite_languages.values():
+    print(lang.title())
+
+print("the following lang have been mentioned:")
+for lang in set(favorite_languages.values()):
+    print(lang.title())
