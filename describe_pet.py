@@ -14,3 +14,16 @@ make_shirt("I love c")
 make_shirt("I love python", size="medium")
 make_shirt("I dislike perl", size="any")
 
+def describe_city(city_name, country_name):
+	print("\t" + city_name + " is in " + country_name)
+
+describe_city("buenos aires", "argentina")
+
+def describe_city(city_name, country_name="argentina"):
+	print("\t" + city_name + " is in " + country_name)
+
+describe_city("buenos aires", "argentina")
+describe_city("la paz", "bolivia")
+describe_city("buenos aires")
+
+
