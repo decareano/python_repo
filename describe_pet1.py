@@ -15,11 +15,11 @@ while True:
 formatted_name = get_formatted_name(f_name, l_name)
 print("\nHello, " + formatted_name + "!")
 
-def make_album(artist_name, album_title):
-  artist = { 'name': artist_name, 'album': album_title }
+def make_album(artist_name, album_title, tracks=11):
+  artist = { 'name': artist_name, 'album': album_title, 'number': tracks }
   return artist
 
 my_album = make_album('madonna', 'world tour')
-my_album1 = make_album('billy joel', 'tour of force')
+my_album1 = make_album('billy joel', 'tour of force', 14)
 my_album2 = make_album('hendrix', 'purple haze')
 print(my_album, my_album1, my_album2)
