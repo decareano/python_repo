@@ -13,4 +13,10 @@ friends = ['phil', 'sarah']
 for n in favorite_languages.keys():
     print(n.title())
 
+if 'erin' not in favorite_languages.keys():
+    print("erin, please take our poll")
+
+for n in sorted(favorite_languages.keys()):
+    print(n + ", thanks for taking the poll")
+
 
