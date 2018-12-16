@@ -36,3 +36,14 @@ cubes = [number**3 for number in range(1, 11)]
 for cube in cubes:
     print(cube)
     
+friend_pizzas = ['pepperoni', 'hawaiian', 'veggie']
+friend_pizzas.append('ham')
+print(friend_pizzas)
+my_new_pizzas = friend_pizzas
+print("\nMy favorite pizzas are: ")
+for a in friend_pizzas:
+    print(a)
+
+
+for b in my_new_pizzas:
+    print("My favorite pizzas are: " + b)
