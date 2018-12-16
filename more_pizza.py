@@ -15,3 +15,20 @@ print("\nI really love pizza!")
 numbers = list(range(1, 21))
 for i in numbers:
     print(i)
+
+threes = list(range(4, 40, 4))
+for n in threes:
+    print(n)
+
+cubes = []
+
+for a in range(1, 10):
+    cube = a**3
+    cubes.append(cube)
+    
+
+for cube in cubes:
+    print(cube)
+
+
+    
