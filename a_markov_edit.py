@@ -1,5 +1,4 @@
 import random
-import urllib.request as req
 
 def fetch_url(url):
     fin = req.urlopen(url)
@@ -27,7 +26,6 @@ class Markov:
         for char, count in options.items():
             for i in range(count):
                 possibles.append(char)
-        ##import pdb;pdb.set_trace()
         return random.choice(possibles)
     
 def get_table(data):
