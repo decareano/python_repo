@@ -1,4 +1,4 @@
-import random
+mport random
 class Markov:
     def __init__(self, data):
         self.table = get_table(data)
@@ -32,5 +32,3 @@ def get_table(data):
             char_dict[next_char] = 1
         results[char] = char_dict
     return results
-
-
