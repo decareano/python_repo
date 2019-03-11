@@ -1,13 +1,12 @@
 from name_function import get_formatted_name
 
-print("enter 'q' at any time to quit")
+print("enter 'q' at any time")
 while True:
-	first = input("\nPlease give me a first name: ")
+	first = input("first: ")
 	if first == 'q':
 		break
-	last = input("\nPlease give me a last name: ")
+	last = input("last: ")
 	if last == 'q':
 		break
-
-formatted_name = get_formatted_name(first, last)
-print("\nNeatly formatted name: " + formatted_name + '.')
+	formatted_name = get_formatted_name(first, last)
+	print("\neatly formatted name: " + formatted_name + ".")
