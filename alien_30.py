@@ -4,7 +4,7 @@ for a in range(30):
 	new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
 	aliens.append(new_alien)
 
-for alien in aliens[:5]:
+for alien in aliens[1:5]:
 	print(alien)
 print("...")
 
