@@ -1,4 +1,4 @@
-alien_0 = {'color': 'green', 'points': 5}
+alien_0 = {'color': 'green', 'points': 5, 'custom': 'batman'}
 
 print(alien_0['color'])
 print(alien_0['points'])
@@ -11,7 +11,7 @@ alien_0['y_position'] = 25
 print(alien_0)
       
 for i in range(3):
-    for j in range(3):
+    for j in range(5):
         print("*", end = " ")
     print(" ")
 
