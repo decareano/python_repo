@@ -10,7 +10,25 @@ class Restaurant:
     def open_restaurant(self):
         print(self.restaurant_name + " is open for business ")
 
+class IceCreamStand(Restaurant):
+    def __init__(self, name, cuisine_type="ice_cream"):
+        super().__init__(name, cuisine_type)
+        self.flavors = []
+        
+
+    def display_flavors(self):
+        print("we have the following flavors: ")
+        for flavor in self.flavors:
+            print("-" + flavor.title())
+
+heladeria = IceCreamStand("La heladeria de marcelo")
+heladeria.flavors = ["strawberry", "vanilla", "frambuesa", "chocolate"]
+heladeria.display_flavors()
+heladeria.describe_restaurant()
+
+
 restaurant = Restaurant(" maria maria", "mexican")
+
 
 print(restaurant.describe_restaurant())
 print(restaurant.open_restaurant())
