@@ -1,22 +1,12 @@
-favorite_languages = {
-        'jen': 'python',
-        'sarah': 'c',
-        'edward': 'ruby',
-        'phil': 'python',
-        }
+from collections import OrderedDict
 
-for n , program in favorite_languages.items():
-    print("\n " , n.title() + "'s favorite language is " +
-            program.title())
+favorite_languages = OrderedDict()
 
-friends = ['phil', 'sarah']
-for n in favorite_languages.keys():
-    print(n.title())
+favorite_languages['jen'] = 'python'
+favorite_languages['sarah'] = 'c'
+favorite_languages['edward'] = 'ruby'
+favorite_languages['phil'] = 'python'
 
-if 'erin' not in favorite_languages.keys():
-    print("erin, please take our poll")
-
-for n in sorted(favorite_languages.keys()):
-    print(n + ", thanks for taking the poll")
-
-
+for name, language in favorite_languages.items():
+    print(name.title() + "'s favorite language is " +
+          language.title() + ".")
