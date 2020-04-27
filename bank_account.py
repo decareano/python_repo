@@ -11,11 +11,13 @@ class BankAccount:
         self.balance += amount
         return self.balance
 
-    def stock(self, symbol, cost):
+    def stock(self, symbol, number_shares):
         self.symbol = symbol
-        self.cost = cost
+        self.number_shares = number_shares
         return self.symbol
 
-    def count_shares(self):
-        number = 10000 / self.price_per_share
-        return number
+    def count_shares(self, cost):
+        self.cost = cost
+        number = cost /  self.price_per_share
+        self.balance -= cost
+        return self.balance
