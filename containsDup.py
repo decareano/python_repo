@@ -12,3 +12,4 @@ def containsDup(s):
     
         
 containsDup([1,2,3,1])
+#cannot run on LeetCode....inefficient...time out exceeded
