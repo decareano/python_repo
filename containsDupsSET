@@ -1,0 +1,14 @@
+def containsDup(nums):
+    
+    mySet = set()
+    
+    for i, val in enumerate(nums):
+        if val in mySet:
+            return True
+        mySet.add(val)
+        
+    return False
+            
+    
+    
+containsDup([3,4,2,9,6,5,3,4,8,7,8])
