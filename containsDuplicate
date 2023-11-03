@@ -1,0 +1,8 @@
+#this is using a hashmap....understanding this better
+for i in nums:
+            if i in myDict:
+                return True
+            #myDict[i] = 1   //works as well
+            myDict[i] = nums.get(1, i)   //better code I think
+            
+        return False
