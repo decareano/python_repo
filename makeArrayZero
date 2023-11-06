@@ -1,0 +1,16 @@
+# this exercise is over my head ATM. maybe later on....I understand the logic but the implementation is somewhat tricky
+
+def reduceArray(nums):
+    nums.sort()
+    current = 0
+    count = 0
+    
+    for i in nums:
+        i -= current
+        
+        if i > 0:
+            current = current + i
+            count += 1
+    return count
+
+reduceArray([1,5,0,3,5])
