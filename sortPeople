@@ -1,0 +1,26 @@
+#what can I say...understanding the concept is one thing. it takes me two seconds. Implementing it is another issue alltogether.
+#trick is to associate tallest person and first person....however, one needs to create a second sort ie: hg = sorted(heights, reverse=True)
+#so that when you compare hg to heights the proper association is made....ie: Emma needs to come in before john in the list
+
+def sortPeople(names, heights):
+    heights.sort(reverse=True)
+    result =[]
+    
+    for i in range(len(heights)):
+        tallest_p = heights[i]
+        #heights[i] = names
+        #names = tallest_p
+        result.append(names[i])
+        #result.append(names[heights.index(i)])
+    
+    return result
+
+
+    # temp = x
+    # x = y
+    # y = temp
+    #result.append(names[heights.index(i)])
+
+
+
+sortPeople(names = ["Mary", "John", "Emma"], heights = [180, 165, 170])
