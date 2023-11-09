@@ -1,0 +1,22 @@
+def majorityElement(nums):
+    sort_a = nums.sort()
+    
+    length = len(nums)
+    print(length)
+    if length % 2 != 0:
+        midIndex = length // 2
+        return nums[midIndex]
+    elif length % 2 == 0:
+        midIndex1 = length // 2 - 1
+        midIndex2 = length // 2
+        return(nums[midIndex1], nums[midIndex2])
+        
+        
+    
+
+
+#the index points to the location of the number that is 
+#going to be selected....ie: 2
+
+
+majorityElement([2,2,2,1,1,1,2,2])
