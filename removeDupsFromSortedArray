@@ -1,0 +1,18 @@
+def removeDuplicates(nums):
+    newResult = 0
+    
+    
+    for i in range(1, len(nums)):
+        if nums[i] != nums[i-1]:
+            nums[newResult] = nums[i]
+            print(newResult)
+            newResult += 1
+        
+           
+    return newResult
+
+removeDuplicates([0,0,1,1,1,2,2,3,3,4])
+
+#list=[10, 20, 50, 30, 40, 80, 60]
+#for i in range(1, len(list)):
+#index =+ 1
