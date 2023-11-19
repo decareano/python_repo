@@ -1,0 +1,18 @@
+def mergeAlternately(word1, word2):
+ 
+        new_str = ""
+        i = 0
+     
+        while i < len(word1) or i < len(word2):
+            if i < len(word1):
+                print(len(word1))
+                new_str += word1[i]
+            if i < len(word2):
+                new_str += word2[i]
+            i += 1
+        return new_str
+            
+               
+                
+            
+print(mergeAlternately("abc", "pqr"))
