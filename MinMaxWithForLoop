@@ -1,0 +1,14 @@
+#see below on how to present the min and max with for loop. No use of functions
+
+def kidsWithCandies(list, int):
+    larg = list[0]
+    small =list[0]
+    for i in list:
+        
+        if i > larg:
+            larg = i
+        if i < small:
+            small = i
+    return larg   
+    
+kidsWithCandies([2,3,5,1,3], 3)
