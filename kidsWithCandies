@@ -1,0 +1,20 @@
+def kidsWithCandies(list, int):
+    larg = list[0]
+    result = []
+    #need to use range here to be able to use
+    #list[i]
+    for i in range(len(list)):
+        
+        if list[i] >= larg:
+            larg = list[i]
+        
+            
+        if list[i] + int >= larg:
+                print(result.append(True))
+        else:
+                print(result.append(False))
+    return result   
+            
+    
+    
+kidsWithCandies([2,3,5,1,3], 3)
