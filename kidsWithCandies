@@ -1,3 +1,7 @@
+#this exercise does not scale with 2,8,7 and extra 1. why? well, they are using the max function. I did not wanted to do that
+#so I calculated the max with a for loop and then put it through the paces. it works but it's not efficient 
+
+
 def kidsWithCandies(list, int):
     larg = list[0]
     result = []
