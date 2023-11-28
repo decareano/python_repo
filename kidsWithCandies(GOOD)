@@ -1,0 +1,18 @@
+class Solution:
+    def kidsWithCandies(self, list, int):
+        larg = max(list)
+        result = []
+    
+        for i in range(len(list)):
+        
+            if list[i] >= larg:
+                larg = list[i]
+            if list[i] + int >= larg:
+                print(result.append(True))
+            else:
+                print(result.append(False))
+        return result   
+            
+    
+myVar = Solution()    
+myVar.kidsWithCandies([2,8,7], 1)
