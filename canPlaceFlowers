@@ -1,0 +1,21 @@
+class Solution:
+    def canPlaceFlowers(self, flowerbed, int):
+        result = len(flowerbed)
+        
+        for i in range(result):
+            
+                if flowerbed[i] == 1:
+                    continue
+               
+                izq = i == 0 or flowerbed[i-1] == 0
+                
+                der = i == result - 1 or flowerbed[i+1] == 0
+              
+                if izq and der:
+                    flowerbed[i] = 1
+                    int -= 1
+                    # below code is not necessary. 
+                    if int <= 0:
+                        return True
+        # the return asks for T or F so is a boolean that can be constructed as int <= 0
+        return int <= 0
