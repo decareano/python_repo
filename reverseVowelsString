@@ -1,0 +1,40 @@
+#tricky in the construct bc you need to decrease the end and increase start all the while keeping track of the swapping. it took a while and I was able to complete
+# maybe 70% but I had to peed at solutions to resolve line 28
+
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        start = 0
+        
+        end = len(s) - 1
+        vowels =['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+        myList = list(s)
+        
+        #myVar = [s[i] for i in range(len(s))]
+        # print(s[start])
+        # while start<end:
+        #     if s[start] in vowels:
+        #         while start<end and s[end] not in vowels:
+        #             end-=1
+        #         aux=s[start]
+        #         s[start]=s[end]
+        #         s[end]=aux
+        #         end-=1
+        #     start+=1   
+        while start < end:
+            if myList[start] in vowels:
+                    print(myList[start])
+                    print(myList[end])
+                    
+                    while start < end and myList[end] not in vowels:
+                        end -= 1
+                    temp = myList[start]
+                    myList[start] = myList[end]
+                    myList[end] = temp 
+                    end -= 1
+                        #start += 1
+            start += 1
+        arrToStr= ''.join(myList)
+        return arrToStr
+
+myVar = Solution()    
+myVar.reverseVowels("leetcodo")
