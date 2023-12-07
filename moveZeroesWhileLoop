@@ -1,0 +1,25 @@
+class Solution:
+    def moveZeroes(self, nums):
+        freepos = None
+        i = 0
+        while i in range(len(nums)):
+            if nums[i] == 0 and freepos == None:
+                freepos = i
+                    
+                #freepos += 1
+            if nums[i] != 0 and freepos != None:
+                # freepos = nums[i]
+                # nums[i] = nums[i-1]
+                # nums[i-1] = freepos  
+                # nums[i] = nums[i]
+                 
+                 nums[freepos], nums[i] = nums[i], 0
+                 print(nums[freepos])
+                
+                 
+                 freepos += 1
+            i += 1         
+        
+
+myVar = Solution()     
+myVar.moveZeroes([0,1,0,0,3,12])
