@@ -1,0 +1,19 @@
+# standard two pointer sequence and pay attention on the final return: is i (which I am testing on every iteration equals to the ORIGINAL string????  
+
+
+class Solution:
+    def isSubsequence(self, s, t):
+        
+        i = 0
+        j = 0
+        while i < len(s) and j < len(t):
+            if s[i] == t[j]:
+               
+               i += 1
+           
+            j += 1
+        return i == len(s)
+           
+
+myVar = Solution()     
+myVar.isSubsequence("abc", "ahcgdc")
