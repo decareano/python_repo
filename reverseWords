@@ -1,0 +1,30 @@
+class Solution:
+    def reverseWords(self, s):
+        #strTemp = []
+        
+        #for i in s[::-1]:
+            #print(i, end="")
+            myVar = s.split()
+            #inserts i at 0 pos 
+            #strTemp.insert(0, i)
+            i, j = 0, len(myVar)-1
+            while i < j:
+                
+                temp = myVar[i]
+                myVar[i] = myVar[j]
+                myVar[j] = temp
+                i += 1
+                j -= 1
+            backToStr =' '.join(myVar)
+            return backToStr
+
+            
+
+myVar = Solution()     
+myVar.reverseWords("The sky is blue")
+
+                    # nums[freepos], nums[i] = nums[i], 0
+                    # print(nums[freepos])  
+                    # freepos = nums[i]
+                    # nums[i] = nums[i-1]
+                    # nums[i-1] = freepos
