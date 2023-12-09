@@ -4,19 +4,19 @@ class Solution:
         
         #for i in s[::-1]:
             #print(i, end="")
-            myVar = s.split()
+            myVar = s.split()        #split the string into a list of words 
             #inserts i at 0 pos 
             #strTemp.insert(0, i)
             i, j = 0, len(myVar)-1
             while i < j:
                 
-                temp = myVar[i]
+                temp = myVar[i]    #swap values in the list
                 myVar[i] = myVar[j]
                 myVar[j] = temp
                 i += 1
                 j -= 1
-            backToStr =' '.join(myVar)
-            return backToStr
+            backToStr =' '.join(myVar)  # from list back to string
+            return backToStr            # return the result
 
             
 
