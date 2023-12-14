@@ -1,0 +1,28 @@
+# playing with append instead of using suffix[i] = prefix/suffix but I need to reverse the list which takes time
+class Solution:
+    def prodExceptSelf(self, nums):
+            
+            result = []
+            prefix = []
+            suffix = []
+            pre, suf = 1, 1
+            
+            for i in range(len(nums)):
+                prefix.append(pre)
+                pre *= nums[i]
+                
+            for i in range(len(nums)-1,-1,-1):
+                print(len(nums)-1,-1,-1)
+                suffix.append(suf)
+                suf *= nums[i]
+            suffix.reverse()    
+            for i in range(len(nums)):
+                result.append(prefix[i] * suffix[i])
+                
+            return result    
+                
+#final output should be: 120,60,40,30,24       
+            
+      
+myVar = Solution()     
+myVar.prodExceptSelf([1,2,3,4,5])
