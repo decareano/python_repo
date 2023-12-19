@@ -1,0 +1,24 @@
+class Solution:
+    def prodExceptSelf(self, nums):
+            
+            
+            
+            result = len(nums) * [1]
+            
+            pre, post = 1, 1
+            
+            for i in range(len(nums)):
+                result[i] = pre
+                pre *= nums[i]
+                
+            for i in range(len(nums)-1,-1,-1):
+                #below is a tricky sequence on how to obtain
+                #the final list. 
+                #result[i], post (that changes) and nums[i]
+                result[i] *= post
+                post *= nums[i]
+            return result    
+                
+      
+myVar = Solution()     
+myVar.prodExceptSelf([1,2,3,4])
