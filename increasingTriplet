@@ -1,0 +1,21 @@
+#note on this one. the triplet is not contiguous
+#meaning it looks for triplets anywhere in the sequence
+#ie: 1,4,3,2,5 is true bc 1,3,5
+
+class Solution:
+    def increasingTriplet(self, nums):
+        first = float('inf')
+        second = float('inf')
+        
+        for i in range(len(nums)):
+            if nums[i] <= first:
+                first = nums[i]
+            elif nums[i] <= second:
+                second = nums[i]
+            else:
+                return True
+        return False
+        
+      
+myVar = Solution()     
+myVar.increasingTriplet([1,4,3,2,2])
