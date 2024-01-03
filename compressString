@@ -1,0 +1,35 @@
+#error was at the bottom of the code. I was increasing
+#i by 1 when it was being increaded by assigning j to i
+#difficult exercise to put together...
+
+
+class Solution:
+    def compressString(self, chars):
+        write_index = 0
+        
+        i = 0
+        
+        
+        while i < len(chars):
+            j = i+1
+            while j < len(chars) and chars[j] == chars[i]:
+                j += 1
+            chars[write_index] = chars[i]
+            write_index += 1
+            if j - i > 1:
+                    count = str(j-i)
+                    print(len(count))
+                    #slice below using :
+                    chars[write_index:write_index+len(count)] = count
+                    print(chars[write_index:write_index+len(count)])               
+                    write_index += len(count)
+            i = j
+        
+                    
+            #i += 1
+        del chars[write_index:]
+        return len(chars)
+        
+      
+myVar = Solution()     
+myVar.compressString(["a", "a", "b", "b", "c", "c", "c"])
