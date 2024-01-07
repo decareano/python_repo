@@ -1,0 +1,28 @@
+#sliding windows exercise. see video by
+
+
+class Solution:
+    def compressString(self, chars, k):
+       
+        #first run with n - k to obtain first sum
+        #for i in range(n - k):
+        window_sum = sum(chars[:k]) 
+        #window_sum /= k
+        maxSum = window_sum
+        #no need for a two loop though having two loops does not
+        #mean punishment in terms of performance. Only when they 
+        #are nested
+        #moving the window here
+        for i in range(k, len(chars)):
+            print(k, chars[k])
+            #previous windows_sum was 2
+            #so we recalculate window_sum
+            # TRICKY CODE BELOW but it works like this: window_sum(prev val) + chars[i] (val added) - chars[i-k] (val removed)
+            window_sum = window_sum + chars[i] - chars[i-k]
+            maxSum = max(maxSum, window_sum)
+        return maxSum / k
+            #window_sum = current_sum + chars[i-k] + chars[i]
+        
+      
+myVar = Solution()     
+myVar.compressString([1, 12,  -5, -6, 50, 3], 4)
