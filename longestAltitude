@@ -1,0 +1,32 @@
+#prefix sum exercise.
+# 1. create a new array 2. first element needs to be copied
+# 3. do the cumulative sum
+
+
+class Solution:
+    def longestAltitude(self, gain):
+        
+        n = len(gain)
+       
+        
+        # [0] is an array with a zero element
+        # need to create a new array for prefix sum
+        # but in order to get a zero need to do (n+1) below
+        prefix_sum = [0] * (n+1)
+        prefix_sum[0] = gain[0]
+        print(prefix_sum)
+        
+        #trick: if zero is not in the input arr
+        #then how do you take into acct?????
+        #-4,-3,-2,-1,4,3,2
+        for i in range(1, n):
+            prefix_sum[i] = prefix_sum[i-1] + gain[i]
+            print(prefix_sum[i])
+            print(prefix_sum[i-n])
+            print(gain[i])
+        return max(prefix_sum)
+            
+        
+      
+myVar = Solution()     
+myVar.longestAltitude([-4,-3,-2,-1,4,3,2])
