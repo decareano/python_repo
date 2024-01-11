@@ -1,7 +1,7 @@
 #prefix sum exercise.
 # 1. create a new array 2. first element needs to be copied
 # 3. do the cumulative sum
-
+# made some comments
 
 class Solution:
     def longestAltitude(self, gain):
