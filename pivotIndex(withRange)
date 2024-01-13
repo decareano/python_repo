@@ -1,0 +1,30 @@
+#prefix sum exercise.
+# 1. create a new array 2. first element needs to be copied
+# 3. do the cumulative sum
+class Solution:
+
+  def pivotIndex(self, nums):
+
+    #totalSum = sum(nums)
+    leftSum = 0
+    rightSum = sum(nums)
+    
+    #below code to start from the back
+    #GOLD BELOW to start from back nums[::-1]
+    #it says: start from the back with 1 less than len(nums)
+    #collection, keep going to -1, by steps of -1
+    # trick is to run rightSum first then compare for equality
+    # and then do the leftSum
+    for i in range(len(nums)):
+        
+        rightSum -= nums[i]
+        if rightSum == leftSum:
+            return i
+        
+        leftSum += nums[i]
+    return -1
+        
+        
+        
+myVar = Solution()
+myVar.pivotIndex([1, 7, 3, 6, 5, 6])
