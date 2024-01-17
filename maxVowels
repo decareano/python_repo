@@ -1,0 +1,32 @@
+#sliding windows exercise; complicated code
+
+class Solution:
+   
+    def maxVowels(self, s, k):
+        vowelCount = 0
+        maxVowel = 0
+        vowel = "aeiou"
+        
+       
+        
+        for i in s[:k]:
+            if i in vowel:
+                vowelCount += 1
+        maxVowel = max(maxVowel, vowelCount)
+        
+        for i in range(k, len(s)):
+            # below code makes the window move
+            # I could not move i
+            j = i - k
+            #j starts at 0; i starts at 3
+            # and we compare
+            if s[i] in vowel:
+                  vowelCount += 1
+            if s[j] in vowel:
+                  vowelCount -= 1
+            
+            maxVowel = max(maxVowel, vowelCount)
+        return maxVowel
+      
+myVar = Solution()     
+myVar.maxVowels("abciiidef", 3)
