@@ -4,7 +4,7 @@ class Solution:
    
     def maxVowels(self, s, k):
         vowelCount = 0
-        maxVowel = 0
+        
         vowel = "aeiou"
         
        
@@ -12,7 +12,7 @@ class Solution:
         for i in s[:k]:
             if i in vowel:
                 vowelCount += 1
-        maxVowel = max(maxVowel, vowelCount)
+        maxVowel = vowelCount
         
         for i in range(k, len(s)):
             # below code makes the window move
