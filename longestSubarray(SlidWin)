@@ -1,0 +1,25 @@
+#put this solution on my own with a template from longestOne
+#idea of SW....kinda green for me
+
+class Solution:
+
+    def longestSubarray(self, nums):
+        ansLength = 0
+        zeros = 0
+        l = 0
+        
+        for r in range(len(nums)):
+            
+            if nums[r] == 0:
+                zeros += 1
+            while zeros > 1:
+                if nums[l] == 0:
+                    zeros -= 1
+                l += 1        
+            ansLength = max(ansLength, r-l+1)
+        #ws = max(ws, r-l+1)
+        return ansLength - 1 
+            
+        
+myVar = Solution()     
+myVar.longestSubarray([0,1,1,1,0,1,1,0,1])
