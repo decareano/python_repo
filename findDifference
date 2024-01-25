@@ -1,0 +1,17 @@
+# get a Set setup to eliminate dups, run the Set difference method to obtain the difference bet the two, convert set back to list and return
+
+class Solution:
+    
+    def findDifference(self, nums1, nums2):
+        mySet = set(nums1)
+        mySet1 = set(nums2)
+        #answer1[mySet]
+        #answer2 = [mySet1]
+        z = mySet.difference(mySet1) 
+        p = mySet1.difference(mySet)
+        backToList = list(z), list(p)
+              
+        return backToList
+        
+myVar = Solution()     
+myVar.findDifference([1,2,3,3], [1,1,2,2])
