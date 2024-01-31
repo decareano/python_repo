@@ -34,6 +34,6 @@ class Solution:
     else:
       print(False)
 
-    
+    return freq1 = freq2    
 myVar = Solution()     
 myVar.closeStrings("uau", "ssx")
