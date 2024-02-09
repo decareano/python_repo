@@ -1,3 +1,6 @@
+#this solution works with some cases but 
+# not with, for example: 10[leetcode])
+
 class Solution:
     def decodeString(self, s):
         stack = []
