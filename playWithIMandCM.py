@@ -9,13 +9,13 @@ class MyClass:
   def method(self):
     print('instance method called', self)
 
-  # @classmethod
-  # def classmethod(cls):
-  #   return 'class method called', cls
+  @classmethod
+  def classmethod(cls):
+     return 'class method called', cls
 
-  # @staticmethod
-  # def staticmethod():
-  #   return 'static method called'
+  @staticmethod
+  def staticmethod():
+     return 'static method called'
 
 
 #lets call the IM:
@@ -26,5 +26,11 @@ MyClass.method(obj)
 #lets call the class method
 #take a cls param that points to the calls not
 #instance object. cannot access self
-#obj.classmethod()
+print(obj.classmethod())
 #or
+MyClass.classmethod()
+
+#static method call
+print(MyClass.staticmethod())
+print(MyClass.method())
+
