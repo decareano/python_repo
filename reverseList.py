@@ -21,6 +21,8 @@ class LinkedList:
             #effectively moving the pointers one node ahead.
             prev = curr
             curr = next
+	print(prev.next.val) #can check if you are doing reversing correctly
+	print(prev.next) #will give you a mem address
         
         return prev
 
