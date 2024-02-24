@@ -6,27 +6,27 @@ class Node:
 
 class LinkedList:
      
-     def oddEvenList(self, a_llist):
-        
-        oddP = 0   #index here
-        evenP = 0   #index here
+     def oddEvenList(self, head):
+        #dont forget to run the edge cases
+        if head == None:
+            return 
+        oddP = head
+        evenP = head.next
+        a_temp = evenP
+        while evenP and evenP.next:
+            #want oddP.next to jump two nodes to 3
+            oddP.next = oddP.next.next
+            oddP = oddP.next
+            #print(oddP.next.val)
+            #print(oddP.val)
             
-        even_head = 0 #dont know what for yet
+            #ditto for evenP
+            evenP.next = evenP.next.next
+            evenP = evenP.next
+        oddP.next = a_temp  
+        return head
         
-        while a_llist:
-            if a_llist % 2 == 0:
-                oddP += 1
-            else:
-               evenP += 1
-        
-    #  def printLL(self):
-    #     current_node = self.head
-    #     while(current_node):
-    #         print(current_node.data)
-    #         current_node = current_node.next
-
 llist = LinkedList()
-
 
 llist.head = Node(1)
 secondN = Node(2)
@@ -39,6 +39,5 @@ secondN.next = thirdN
 thirdN.next = fourthN
 fourthN.next = fifthN
 fifthN.next = None
-llist.oddEvenList()
-#llist.oddEvenList({ val: 1, next: { value: 2, next: { val: 3, next: { val: 4, next: { val: 5, next: null} } } } })
-#llist.oddEvenList({ head: 1, next: { secondN: 2, next}})
+
+llist.oddEvenList(llist.head)
