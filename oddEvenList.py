@@ -13,16 +13,22 @@ class LinkedList:
         oddP = head
         evenP = head.next
         a_temp = evenP
+        # we test for evens because they are moved to the back???
+        # not quite clear on that
         while evenP and evenP.next:
             #want oddP.next to jump two nodes to 3
             oddP.next = oddP.next.next
+            #moves oddP down the LL
             oddP = oddP.next
             #print(oddP.next.val)
             #print(oddP.val)
             
             #ditto for evenP
             evenP.next = evenP.next.next
+            #moves evenP down the LL
+            #second time it becomes None
             evenP = evenP.next
+            #it becomes None
         oddP.next = a_temp  
         return head
         
