@@ -21,6 +21,9 @@ class Solution:
             # adding variable otherwise this does not work
             # cuz I need a way to multiply to the right of 
             # input arr
+	    # another issue: the optimization is happening in the 
+	    # input arr....so the need for the variable to be able
+	    # to multiply the numbers to the right in the input arr
             rightMost = nums[-1]
             for i in range(len(nums)-2,-1,-1):
                 #result[i] = result[i] * nums[i+1]
