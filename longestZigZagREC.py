@@ -25,8 +25,8 @@ class Solution:
                 else:
                     dfs(node.left, False, 1)
                     dfs(node.right, True, pathLen + 1)
-                
-        dfs(root, False, 0) 
+	#we dont need both path. Only one                
+        #dfs(root, False, 0) 
         dfs(root, True, 0)
     
         return self.goDir
