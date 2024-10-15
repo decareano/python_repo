@@ -1,0 +1,40 @@
+# Definition for a binary tree node.
+class node:
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+class Solution:
+    def binaryTreePaths(self, root):
+           
+            def dfs(node, currPath, resLst):
+            # tried to pass currPath and resLst as variables 
+            # instead of args. Not as simple as I thought.
+                
+                if node is not None:
+                   
+                    if currPath:
+                        currPath += "->" + str(node.val)
+                        print(currPath)
+                    else:
+                        currPath = str(node.val)
+                    # we get to leaf node...append what we have
+                    if node.left == None and node.right == None:
+                        resLst.append(currPath)
+                        print(resLst)
+                    else:    
+                        dfs(node.left, currPath, resLst)
+                        dfs(node.right, currPath, resLst)
+            resLst = []
+                
+            dfs(root, "", resLst) 
+            return resLst
+root = node(1)
+root.left = node(2)
+root.right = node(3)
+root.left.right = node(5)
+# root.left.right = node(3)
+# root.right.left = node(6)
+# root.right.right = node(9)
+myVar = Solution()
+myVar.binaryTreePaths(root)
