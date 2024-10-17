@@ -1,0 +1,38 @@
+# Definition for a binary tree node.
+class node:
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+class Solution:
+    def hasPathSum(self, root, target):
+            result = False
+            def dfs(node, currSum):
+                # using nonlocal...first for me
+                nonlocal result
+                if not node:
+                    return
+                
+                print(node.val)
+                currSum += node.val
+               
+                if currSum == target:
+                    result = True
+                    
+        
+                dfs(node.left, currSum)
+                dfs(node.right, currSum)
+
+            dfs(root, 0) 
+            return result
+root = node(5)
+root.left = node(4)
+root.right = node(8)
+root.left.left = node(11)
+root.left.left.left = node(7)
+root.left.left.right = node(2)
+root.right.left = node(13)
+root.right.right = node(4)
+root.right.right.right = node(1)
+myVar = Solution()
+myVar.hasPathSum(root, 22)
