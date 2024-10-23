@@ -1,0 +1,30 @@
+class Solution:
+    def maximumTop(self, nums, k):
+            # max has to play into this exercise
+            
+            if len(nums) == 1:
+                if k%2 != 0:
+                    return -1
+                return nums[0]
+                # if k == 1:
+                #     return nums[1]
+            if k == 0:
+                return nums[0]
+            #how to resolve max below !!!!
+            #I was using a for loop
+            if k == len(nums):
+                return max(nums[:-1])
+                
+            if k > len(nums):
+                return max(nums)
+                
+            if k == 1:
+                return nums[1]
+            myVar = max(nums[:k-1]) #nums[all vs k-1
+            print(nums[:k-1])
+            myVar = max(myVar, nums[k])
+            print(nums[k])
+            return myVar
+           
+myVar = Solution()
+myVar.maximumTop([5,9,4,3,0,6], 4)
