@@ -1,0 +1,56 @@
+class Solution:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        left,right = 0,0
+        sumWindow = 0
+        res = float('inf')
+
+        for right in range(len(nums)):
+            sumWindow += nums[right]
+
+            while sumWindow >= target:
+                res = min(res, right-left+1)
+                sumWindow -= nums[left]
+                left += 1
+        return res if res != float('inf') else 0
+
+
+Mine which was failing on the for loop. same code:
+
+class Solution:
+    def minSubArrayLen(self, nums, k):
+        leftP = 0
+        rightP = 0
+        sumP = 0
+        min_len = float(99999)
+        
+        for rightP in range(len(nums)):
+            
+            sumP += nums[rightP]
+            
+            #if sumP >= k:
+            # a more simplified solution than mine
+            # using a while instead of an if
+            # saving me 8 lines of code
+            # one thing to note: 
+            # line 18 with a while loop saves me 
+            # all code I wrote as in:
+            # while leftP < rightP !!!!!
+            while sumP >= k:
+                min_len = min(min_len, rightP - leftP + 1)
+                sumP -= nums[leftP]
+               
+                leftP += 1
+        return min_len if min_len != float('inf') else 0 
+        
+                # my code below...not necessary!!!
+                #while left P < rightP:
+                    
+                    # sumP -= nums[leftP]
+                    # leftP += 1
+                    # min_len = min(min_len, rightP-leftP+1)
+                    # print(leftP)
+                    # print(nums[leftP])
+                    # break
+ 
+myVar = Solution()
+myVar.minSubArrayLen([2,3,1,2,4,3], 7)
