@@ -5,9 +5,10 @@ class Solution:
         #d[x] is x in the loop (as in a, b, c or whatever
         #then we pass x in the d dictionary. next is
         # the get call....get x, start at zero and add 1
+        # add 1 is IMPORTANT....otherwise it gets to zero and it does not progress
         d = {}
         for x in str:
-            d[x] = d.get(x, 0) + 1
+            d[x] = 1 + d.get(x, 0)
             print(d[x])
 
 aTest = Solution()
