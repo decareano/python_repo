@@ -1,0 +1,50 @@
+#lots of work on for loop on lines 26 to 43:
+class Solution:
+    def minWindow(self, s, t):
+        left = 0
+        right = 0
+        tcount = {}
+        window = {}
+         
+        
+      
+        # for x in t:
+        #     if x in tcount:
+        #         tcount[x] += 1
+        #     else:
+        #         tcount[x] = 1
+        # i am adding code below       
+        for x in range(len(t)):
+            tcount[t[x]] = 1 + tcount.get(t[x], 0)
+            
+                
+        have = 0
+        need = len(tcount)
+        print(need)
+        #below I copy it...no idea. Need to research
+        min_len, min_len_size = [-1, -1], float("infinity")
+       
+        for right in range(len(s)):
+        # need to add 1 to the get method otherwise
+        # you get 1 in range(len(s)):
+            #expand window of current char
+            #as in A:1, B:2 etc
+            window[s[right]] = 1 + window.get(s[right], 0)
+           
+            if s[right] in tcount and window[s[right]] == tcount[s[right]]:
+                print(tcount[s[right]])
+               
+                print(s[right])
+                print(window[s[right]])
+                print(t[x]) #equals C cuz for loop already run
+                print(s[right]) #s[right] runs on the loop in
+                #lines 16/17 !!!! dont know why
+                print(s[right]) #result of window dict
+                have += 1
+        while have == need:
+                    if right < left:
+                        min_len = right
+                    have += 1
+
+myVar = Solution()
+myVar.minWindow("ADOBECODEBANC", "ABC")
