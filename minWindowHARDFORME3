@@ -1,0 +1,64 @@
+#this particular test was failing. I had the while loop (have == need) outside the for loop.
+#fix it to be inside the loop and it worked.
+
+class Solution:
+    def minWindow(self, s, t):
+        left = 0
+        right = 0
+        tcount = {}
+        window = {}
+         
+        # for x in t:
+        #     if x in tcount:
+        #         tcount[x] += 1
+        #     else:
+        #         tcount[x] = 1
+        # i am adding code below       
+        for x in range(len(t)):
+            tcount[t[x]] = 1 + tcount.get(t[x], 0)
+            
+                
+        have = 0
+        need = len(tcount)
+        print(need)
+        #below I copy it...no idea. Need to research
+        min_len = [-1, -1]
+        min_len_size = float("infinity")
+        
+        for right in range(len(s)):
+        # need to add 1 to the get method otherwise
+        # you get 1 in range(len(s)):
+            #expand window of current char
+            #as in A:1, B:2 etc
+            window[s[right]] = 1 + window.get(s[right], 0)
+            # wrong:
+            #if t[x] in tcount and window[s[right]] == tcount[t[x]]:
+            #correct: 
+            if s[right] in tcount and window[s[right]] == tcount[s[right]]:
+                print(tcount[s[right]])
+               
+                print(s[right])
+                print(window[s[right]])
+                print(t[x]) #equals C cuz for loop already run
+                print(s[right]) #s[right] runs on the loop in
+                #lines 16/17 !!!! dont know why
+                print(s[right]) #result of window dict
+                have += 1
+            while have == need:
+                if (right - left + 1) < min_len_size:
+                #below are placeholders in line 24/25 to establish
+                #minimums. for the pointers to shrink 
+                    min_len = [left, right]
+                    min_len_size = (right - left + 1)
+                
+                    window[s[left]] -= 1
+                    if s[left] in tcount and window[s[left]] < tcount[t[x]]:
+                        have -= 1
+                    left += 1
+                    print(s[min_len[0]])
+                    print(s[min_len[0]: min_len[1] + 1])
+                    print(s[min_len[1]])
+            return s[min_len[0]: min_len[1] + 1] if min_len_size != float("infinity") else ""
+        
+myVar = Solution()
+myVar.minWindow("AB", "A")
