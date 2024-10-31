@@ -1,0 +1,39 @@
+#pass solution
+
+class Solution:
+    def minWindow(self, s, t):
+        left = 0
+        right = 0
+        tcount = {}
+        window = {}
+     
+        for x in range(len(t)):
+            tcount[t[x]] = 1 + tcount.get(t[x], 0)
+       
+        have = 0
+        need = len(tcount)
+        print(need)
+     
+        min_len = [-1, -1]
+        min_len_size = float("infinity")
+        
+        for right in range(len(s)):
+            window[s[right]] = 1 + window.get(s[right], 0)
+           
+            if s[right] in tcount and window[s[right]] == tcount[s[right]]:
+                have += 1
+            while have == need:
+                if (right - left + 1) < min_len_size:
+                    min_len = [left, right]
+                    min_len_size = (right - left + 1)
+                
+                window[s[left]] -= 1
+                if s[left] in tcount and window[s[left]] < tcount[s[left]]:
+                    have -= 1
+                left += 1
+               
+        return s[min_len[0]: min_len[1] + 1] if min_len_size != float("infinity") else ""
+               
+        
+myVar = Solution()
+myVar.minWindow("BBAA", "ABA")
