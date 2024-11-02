@@ -1,0 +1,21 @@
+class Solution:
+    def addBinary(self, a, b):
+        maximo_L = max(len(a), len(b))
+        a = a.zfill(maximo_L)
+        b = b.zfill(maximo_L)
+        
+        result = ''
+        carry = 0
+        
+        for i in range(maximo_L-1, -1, -1):
+            mySum = int(a[i]) + int(b[i]) + carry
+            carry = mySum // 2
+            result = str(mySum % 2) + result
+        
+        if carry:
+            result = '1' + result
+            
+        return result
+
+myVar = Solution()
+myVar.addBinary("11", "1")
