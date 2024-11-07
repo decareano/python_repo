@@ -1,0 +1,20 @@
+class Solution:
+    def plusOne(self, list):
+        n = len(list)
+        #if not using n the for loop does not work(list vs int)
+        for i in range(n - 1, -1, -1):
+            # no need to do list[i]-1...already getting back number
+            # read the exercise closely and accurately. It says add
+            # 1 to the number represented as array. 123 + 1
+            # so deal with the last integer if < 9 and at most
+            # with 2 int if > 9. No carry no results
+            # see how to construct the carry in lines 
+            #16 and 17
+            if list[i] < 9:
+               list[i] += 1
+               return list
+            list[i] = 0
+        return [1] + list
+           
+myVar = Solution()
+myVar.plusOne([1,2,9])
