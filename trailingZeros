@@ -1,0 +1,18 @@
+class Solution:
+    def trailingZeroes(self, n):
+        count = 0
+        p = 5
+        
+        if n == 0 or n == 1:
+            return 1
+        
+        while (n // p) > 0:
+            print(n // p)
+            count += (n // p)
+            p = p * 5
+            
+        return int(count)
+            
+
+myVar = Solution()
+myVar.trailingZeroes(30)
