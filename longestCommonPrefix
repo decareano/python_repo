@@ -1,0 +1,33 @@
+class Solution:
+    def longestCommonPrefix(self, myArr):
+        prefix = myArr[0]
+       
+        
+        if myArr == "":
+            return 
+        i = 0
+        # here we have to get a loop for the strings
+        # and then within the strings I have to iterate 
+        # through them. Difficult to do it in one loop
+        # so you need to setup a for loop and within it, 
+        # set up a while loop
+        for i in myArr[1:]:
+            print(i)
+            while not i.startswith(prefix):
+                    print(i)
+                    print(i.startswith(prefix))
+                    print(prefix)
+                    # I did -1 instead of :-1 meaning
+                    # take out the last char of prefix
+                    prefix = prefix[:-1]
+        return prefix        
+                    
+                    
+            
+            
+        #res = [sub[: -1] for sub in test_list]    
+           #my_str = my_str[:-1] 
+            
+myVar = Solution()
+myVar.longestCommonPrefix(["flower","flow","flight"])
+
