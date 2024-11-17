@@ -1,0 +1,31 @@
+#attempted a solution besides the one I resolved with guidance but I failed. Cannot seem to get the startswith method to work in the while loop. In other words, I tried to compare every character in one string to the other
+#but I could not isolate the one with prefix. maybe later
+
+class Solution:
+    def longestCommonPrefix(self, myArr):
+        prefix = myArr[0]
+        print(prefix)
+        myResult = ""
+        nn = len(prefix)
+        if myArr == "":
+            return 
+        #str1 = myArr[0]
+        str2 = myArr[1]
+        str3 = myArr[2]
+        
+        for i in str2[0:]:
+            print(i)
+            
+            while i.startswith(nn(i)):
+                print(prefix[:1])
+                print(i.startswith(prefix[:1]))
+                
+                
+               
+                myResult += i
+                #prefix = prefix[:1]
+                nn += 1
+            
+        return prefix    
+myVar = Solution()
+myVar.longestCommonPrefix(["flower","flow","flight"])
