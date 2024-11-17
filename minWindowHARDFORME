@@ -1,0 +1,48 @@
+#this is a wip on this exercise. Quite a bit of code
+
+class Solution:
+    def minWindow(self, s, t):
+        left = 0
+        right = 0
+        tcount = {}
+        window = {}
+         
+        
+      
+        # for x in t:
+        #     if x in tcount:
+        #         tcount[x] += 1
+        #     else:
+        #         tcount[x] = 1
+        # i am adding code below       
+        for x in range(len(t)):
+            tcount[t[x]] = 1 + tcount.get(t[x], 0)
+                
+        have = 0
+        need = len(tcount)
+        print(need)
+        #below I copy it...no idea. Need to research
+        min_len, min_len_size = [-1, -1], float("infinity")
+       
+        for right in range(len(s)):
+        # need to add 1 to the get method otherwise
+        # you get 1 in range(len(s)):
+            #expand window of current char
+            #as in A:1, B:2 etc
+            window[s[right]] = 1 + window.get(s[right], 0)
+            #if tcount.keys() == window.keys():
+                # print(window[s[right]])
+                # print(window.get(s[right], 0))
+            print(list(tcount.keys()))
+            print(list(window.keys()))
+                # if  tcount[t]:
+            have += 1
+    #         print("One line Code Key value: ", list(my_dict.keys())
+    #   [list(my_dict.values()).index(100)])
+        while have == need:
+                    if right < left:
+                        min_len = right
+                    have += 1
+
+myVar = Solution()
+myVar.minWindow("ADOBECODEBANC", "ABC")

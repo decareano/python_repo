@@ -1,0 +1,15 @@
+class Solution:
+    def myVar(self, str):
+        
+        #break down of how to get a dict populate with count
+        #d[x] is x in the loop (as in a, b, c or whatever
+        #then we pass x in the d dictionary. next is
+        # the get call....get x, start at zero and add 1
+        # add 1 is IMPORTANT....otherwise it gets to zero and it does not progress
+        d = {}
+        for x in str:
+            d[x] = 1 + d.get(x, 0)
+            print(d[x])
+
+aTest = Solution()
+aTest.myVar("ADOBECODEBANC")

@@ -1,0 +1,50 @@
+#pass solution
+
+class Solution:
+    def minWindow(self, s, t):
+        left = 0
+        right = 0
+        tcount = {}
+        window = {}
+     
+        #for x in range(len(t)):
+            #tcount[t[x]] = 1 + tcount.get(t[x], 0)
+            
+        for right in range(len(t)):
+            tcount[t[right]] = 1 + tcount.get(t[right], 0)
+       
+        have = 0
+        need = len(tcount)
+     
+        min_len = [-1, -1]
+        min_len_size = float("infinity")
+        
+        for right in range(len(s)):
+            window[s[right]] = 1 + window.get(s[right], 0)
+            # below if currChar in tcount and its count in window dict
+            # matches count in tcount, increase have
+            if s[right] in tcount and window[s[right]] == tcount[s[right]]:
+                
+                # s string: 
+                print(s[right]) # B
+                print(window[s[right]]) #1
+                print(tcount[s[right]]) #1
+                
+                have += 1
+            while have == need:
+                if (right - left + 1) < min_len_size:
+                    min_len = [left, right]
+                    min_len_size = (right - left + 1)
+                
+                window[s[left]] -= 1
+                #if char going out in in tcount and its count in window is
+                #less than the count in tcount, decrement have
+                if s[left] in tcount and window[s[left]] < tcount[s[left]]:
+                    have -= 1
+                left += 1
+               
+        return s[min_len[0]: min_len[1] + 1] if min_len_size != float("infinity") else ""
+               
+        
+myVar = Solution()
+myVar.minWindow("BBAA", "ABA")

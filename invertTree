@@ -1,0 +1,31 @@
+# Definition for a binary tree node.
+class node:
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+class Solution:
+    def invertTree(self, root):
+            self.isMirror(root)
+            return root
+            
+    def isMirror(self, root):
+            if not root:
+                return
+                     
+            root.left, root.right = root.right, root.left
+                   
+            self.isMirror(root.left)
+            self.isMirror(root.right)
+            
+            
+ 
+root = node(1)
+#root.left = node(2)
+root.right = node(2)
+# root.left.left = node(1)
+# root.left.right = node(3)
+# root.right.left = node(6)
+# root.right.right = node(9)
+myVar = Solution()
+myVar.invertTree(root)

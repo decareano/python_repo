@@ -1,0 +1,33 @@
+# Definition for a binary tree node.
+class node:
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+class Solution:
+        def isSymmetric(self, root):
+            if not root:
+                return True
+
+            def isMirror(node1, node2):
+                if node1 == None and node2 == None:
+                    return True
+                
+                if node1 == None or node2 == None:
+                    return False
+                
+                
+                return node1.val == node2.val and \
+                isMirror(node1.left, node2.right) and\
+                isMirror(node1.right, node2.left)
+            return isMirror(root.left, root.right)
+root = node(1)
+root.left = node(2)
+root.right = node(2)
+root.left.left = node(3)
+root.left.right = node(4)
+root.right.left = node(4)
+root.right.right = node(3)
+
+myVar = Solution()
+myVar.isSymmetric(root)

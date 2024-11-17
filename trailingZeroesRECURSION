@@ -1,0 +1,31 @@
+#this one
+# this was my attempt to solve it via recursion but I could not make it work. Maybe in the future I will look at it and be able to find a correct solution
+class Solution:
+    def trailingZeroes(self, n):
+        mul5 = []
+        myCountZeroes = 0
+        
+        def helper(n):
+        
+            if n == 0 or n == 1:
+                return 1
+                
+                
+            # count = 0
+            # while n > 0:
+            # n //= 5
+            # count += n
+            # return count
+            if n%5 == 0: 
+                mul5.append(1)
+            if 5 * 5 == n:
+                mul5.append(1)
+            if 5 * 2 == n:
+                mul5.append(1)
+            if n > 0:
+                n * helper(n-1)
+            return max(sum(mul5), myCountZeroes)
+        helper(n)
+        return sum(mul5)
+myVar = Solution()
+myVar.trailingZeroes(30)

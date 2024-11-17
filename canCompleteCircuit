@@ -1,0 +1,22 @@
+class Solution:
+    def canCompleteCircuit(self, gas, cost):
+        curr_tank = 0
+        starting_station = 0
+        num_stations = len(gas)
+           
+        if sum(gas) < sum(cost):
+            return -1
+        for i in range(num_stations):
+            #below is curr_tank = curr_tank + gas[i] + cost[i]
+            #that way curr_tank is counted even when it's reset
+            #to zero in line 17
+            curr_tank += gas[i] - cost[i]
+            #curr_tank = gas[i] - cost[i]
+            if curr_tank < 0:
+                starting_station = i + 1
+                curr_tank = 0
+            
+        return starting_station
+       
+myVar = Solution()
+myVar.canCompleteCircuit([5,1,2,3,4], [4,4,1,5,1])

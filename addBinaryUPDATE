@@ -1,0 +1,26 @@
+class Solution:
+    def addBinary(self, a, b):
+        maximo_L = max(len(a), len(b))
+        a = a.zfill(maximo_L)
+        b = b.zfill(maximo_L)
+        
+        result = ''
+        carry = 0
+        # so maximo_L - 1 is just starting from back
+        # decrease by 1 from the back
+        # I guess stop is -1 but it stops when for loop fails??
+        # not clear on last one
+        # range(start, stop, step)
+        for i in range(maximo_L-1, -1, -1):
+            # int cuz its a string
+            mySum = int(a[i]) + int(b[i]) + carry
+            carry = mySum // 2
+            result = str(mySum % 2) + result
+        
+        if carry:
+            result = '1' + result
+            
+        return result
+
+myVar = Solution()
+myVar.addBinary("1010", "1011")

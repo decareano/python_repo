@@ -1,0 +1,20 @@
+#code line 11 i was using myList[i+1]. Wrong. Need to be just: i+1
+class Solution:
+    def duplicateZeros(self, myList):
+        
+        #for i in range(len(myList)):
+        i = 0
+        while i < len(myList):    
+            
+            if myList[i] == 0:
+                #myList[i] += 1
+                myList.insert(i+1, 0)
+                
+                
+                myList.pop()
+                i += 2
+            else:
+                i += 1
+                
+myVar = Solution()
+myVar.duplicateZeros([1,0,2,3,0,4,5,0])

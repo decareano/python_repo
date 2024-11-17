@@ -1,0 +1,16 @@
+134. Gas Station
+The canCompleteCircuit method takes in two lists of integers. The method returns an integer representing the starting station from which a circular tour can be completed, or -1 if such a tour is not possible.
+
+The method first checks if the total amount of gas is less than the total cost of the trip. If it is, it returns -1.
+
+It then initializes three variables:
+
+current_tank: a variable representing the current amount of gas in the tank
+starting_station: a variable representing the starting station
+num_stations: a variable representing the number of stations
+It then iterates through the gas and cost lists. For each station, it updates current_tank by the difference between the gas and cost at that station. If current_tank becomes negative, 
+it updates starting_station to the next station and resets current_tank to 0.
+
+Finally, after all the stations have been processed, it returns starting_station.
+
+  Follow above notes to finish the exercise.
