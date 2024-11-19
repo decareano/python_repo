@@ -27,8 +27,11 @@ class Solution:
         # to concatenate all the strings
         # ie: you start with myRows[i] and then you keep
         # adding the other strings
-        for i in range(numRows):
+        # for i in range(numRows):
+	i = 0
+	while i in range(numRows):
             myRows[i] = "".join(myRows[i])
+	    i += 1
             
         return "".join(myRows)
         
