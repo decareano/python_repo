@@ -1,3 +1,4 @@
+
 class Solution:
     def convert(self,  str, numRows):
         if numRows >= len(str):
@@ -8,6 +9,9 @@ class Solution:
         #if you do an empty array...numRows gets wiped
         
         # myRows is the iterable
+        # btw below code is using a list comprehension to create 
+	# three empty arrays. I tried to do it in two steps 
+	# and it does not work. so that is the way to go
         myRows = [[] for row in range(numRows)]
         
         for char in str:
