@@ -1,0 +1,26 @@
+1. Initialize Variables:
+papers = len(citations)
+citation_buckets = [0] * (papers + 1)
+papers: Calculate the total number of papers by getting the length of the citations list.
+citation_buckets: Create an array of size papers + 1 initialized to zero. This array will count the number of papers that fall into different citation categories.
+2. Populate Citation Buckets:
+for citation in citations:
+    citation_buckets[min(citation, papers)] += 1
+Iterate through each citation count in the citations list.
+For each citation, determine the appropriate bucket index:
+Use min(citation, papers) to ensure that if a citation count exceeds the total number of papers, it counts towards the highest bucket (which is papers).
+Increment the corresponding bucket in citation_buckets to keep track of how many papers have that citation count.
+3. Calculate the h-index:
+cumulative_papers = 0
+for h_index in range(papers, -1, -1):
+    cumulative_papers += citation_buckets[h_index]
+    if cumulative_papers >= h_index:
+        return h_index
+Initialize a variable cumulative_papers to zero. This variable will track the cumulative count of papers with citations greater than or equal to the current h-index candidate.
+Loop through h_index from papers down to 0:
+For each h_index, add the count of papers in the current bucket (citation_buckets[h_index]) to cumulative_papers.
+Check if cumulative_papers is greater than or equal to h_index. If so, return h_index as it represents the maximum h-index for which the condition is satisfied.
+4. Return 0 if no h-index Found:
+return 0
+If the loop completes without finding a valid h-index, return 0, indicating that the researcher does not meet the criteria for any h-index.
+
