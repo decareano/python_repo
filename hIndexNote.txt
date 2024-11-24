@@ -24,3 +24,4 @@ Check if cumulative_papers is greater than or equal to h_index. If so, return h_
 return 0
 If the loop completes without finding a valid h-index, return 0, indicating that the researcher does not meet the criteria for any h-index.
 
+I am going to let my brain absorbed this solution. I resolved it with guidance but still dont get the idea of hIndex. 
