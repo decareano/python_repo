@@ -1,0 +1,26 @@
+#this one
+class Solution:
+    def onesMinusZeros(self, grid: list[list[int]]) -> bool:
+        mrow = len(grid)
+        ncol = len(grid[0])
+      
+        res = [0 * ncol for _ in range(mrow)] 
+        
+        onesRow = [row.count(1) for row in grid]
+        print(onesRow)
+        onesCol = [col.count(1) for col in zip(*grid)]
+        print(onesCol)
+        for i in range(mrow):
+            for j in range(ncol):
+                print(onesRow[i])
+                print(onesCol[j])
+                print(mrow-onesRow[i])
+                print(ncol-onesCol[j])
+                res[i][j] = onesRow[i]+onesCol[j]-(mrow-onesRow[i])-(ncol-onesCol[j])
+                
+        return res
+                    
+
+myVar = Solution()
+myVar.onesMinusZeros(
+    grid = [[0,1,1],[1,0,1],[0,0,1]])
